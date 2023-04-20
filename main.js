@@ -1,34 +1,23 @@
-const apiUrl = "https://rata.digitraffic.fi/api/v1";
-const stationsUrl = `${apiUrl}/metadata/stations`;
-
-const stationSelect = document.getElementById("station");
-
-fetch(stationsUrl)
-    .then(response => response.json())
-    .then(stations => {
-        stations.forEach(station => {
-            const option = document.createElement("option");
-            option.value = station.stationShortCode;
-            option.text = station.stationName;
-            stationSelect.appendChild(option);
+// Function to get train data from Digitraffic API
+function getTrainData() {
+    const station = document.getElementById("station").value;
+    const url = `https://rata.digitraffic.fi/api/v1/live-trains?station=${station}`;
+  
+    // Make a GET request to the API endpoint
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Display the train data on the webpage
+        let trainData = "<table><tr><th>Train Number</th><th>Category</th><th>Type</th><th>Destination</th><th>Scheduled Time</th></tr>";
+        data.forEach(train => {
+          trainData += `<tr><td>${train.trainNumber}</td><td>${train.trainCategory}</td><td>${train.trainType}</td><td>${train.timeTableRows[0].stationShortCode}</td><td>${train.timeTableRows[0].scheduledTime.slice(11, 16)}</td></tr>`;
         });
-    })
-    .catch(error => console.error(error));
+        trainData += "</table>";
+        document.getElementById("trainData").innerHTML = trainData;
+      })
+      .catch(error => console.log(error));
+  }
 
-    function getTimetables() {
-        const stationCode = document.getElementById("station").value;
-        const timetablesUrl = `${apiUrl}/live-trains/station/${stationCode}`;
-
-        fetch(timetablesUrl)
-            .then(response => response.json())
-            .then(timetables => {
-                let timetableHtml = "<h2>Timetables</h2>";
-                timetableHtml += "<ul>";
-                timetables.forEach(timetable => {
-                    timetableHtml += `<li>${timetable.trainNumber} - ${timetable.trainCategory} - ${timetable.trainType} - ${timetable.timeTableRows[0].scheduledTime}</li>`;
-                });
-                timetableHtml += "</ul>";
-                document.getElementById("timetables").innerHTML = timetableHtml;
-            })
-            .catch(error => console.error(error));
-    }
+  function showStations() {
+    alert("HKI = Helsinki\nKLH = Kauklahti\nKE = Kerava\nKKN = Kirkkonummi\nSTI = Siuntio\nRI = Riihimäki")
+  }

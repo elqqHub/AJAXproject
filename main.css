@@ -1,32 +1,57 @@
-h1 {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
     text-align: center;
   }
   
   form {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  label, select {
-    font-size: 1.2em;
-    margin-right: 10px;
-  }
-  
-  #timetable {
     margin: 20px;
-    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  select {
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .info {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: #357737;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+  button:hover {
+    background-color: #3e8e41;
   }
   
   table {
     border-collapse: collapse;
+    margin: 20px;
     width: 100%;
   }
   
   th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
     text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
   }
   
   th {

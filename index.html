@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <title>Commuter Traffic APP</title>
-</head>
-<body>
-    <h1>Commuter Traffic APP</h1>
+    <title>Commuter Traffic App</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <h1>Commuter Traffic App</h1>
     <form>
-        <label for="station">Select a train station:</label>
-        <select id="station">
-            <!-- station options will be added using JavaScript -->
-        </select>
-        <br><br>
-        <input type="button" value="Get Timetables" onclick="getTimetables()">
+      <label for="station">Select a train station:</label>
+      <select id="station">
+        <option value="KRS">Kerava</option>
+        <option value="HKI">Helsinki</option>
+        <option value="TPE">Tampere</option>
+      </select>
+      <button type="button" onclick="getTrainData()">Get Train Data</button>
+      <br><br>
+      <button type="button" class="info" onclick="showTrainTypes()">Train type abbreviations</button>
+      <button type="button" class="info" onclick="showStations()">Destination station abbreviations</button>
     </form>
-    <div id="timetables">
-        <!-- timetable information will be displayed here -->
-    </div>
+    <div id="trainData"></div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
