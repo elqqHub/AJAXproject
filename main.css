@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  label, select {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+  
+  #timetable {
+    margin: 20px;
+    font-size: 1.2em;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
