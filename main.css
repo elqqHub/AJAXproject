@@ -45,6 +45,12 @@ body {
     cursor: pointer;
   }
 
+  /*  Asemalistanapin kohdistus linjassa asematietotaulukkoon ja samalla tuodaan sitä myös hieman irti sivun pohjalta, jotta käyttäjältä ei jäisi nappi vahingossakaan huomaamatta */
+  #infoButton {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
   /* Wikipediaan ohjaavan napin erillinen tyylittely, jolla napin "painoarvoa" pyritään vähentämään pienentämällä fonttia ja tummentamalla hieman taustaa (Täysin omaa psykologiaa en tiedä ollenkaan vähentääkö tämä oikeasti huomiota :D) */
   .wiki {
     font-size: 12px;
