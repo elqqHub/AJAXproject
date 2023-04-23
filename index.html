@@ -1,27 +1,36 @@
+<!-- HTML tiedostolle tarpeelliset tilpehöörit -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Commuter Traffic App</title>
+    <!-- Linkataan CSS tyylittelytiedosto HTML tiedostoon -->
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <h1>Cool Awesome Commuter Traffic App</h1>
+    <!-- Sivun otsikko, jolle lisätään class, joka antaa tekstille mustat ääriviivat ja tämän avulla teksti saadaan erottumaan taustakuvasta paremmin -->
+    <h1 class="strokeme">Cool Awesome Commuter Traffic App</h1>
+    <!-- Luodaan form, joka toimii käyttäjälle valikkona, mitä käyttäen hän voi valita tarkasteltavan aseman -->
     <form>
-      <label for="station">Select a train station:</label>
+      <label for="station" class="strokeme">Select a train station:</label>
       <select id="station">
+        <!-- Määritellään eri asemat, joiden junatietoja käyttäjä voi katsella -->
         <option value="KRS">Kerava</option>
         <option value="HKI">Helsinki</option>
         <option value="TPE">Tampere</option>
       </select>
+      <!-- Luodaan nappi ja annetaan tälle funktio, joka hakee valitun aseman junatiedot -->
       <button type="button" onclick="getTrainData()">Get Station Timetable</button>
       <br>
       <br>
-      <button type="button" class="info" onclick="openWiki()"> Train types (Wikipedia)</button>
+      <!-- Luodaan toinen nappi ja annetaan tälle funktio, joka ohjaa käyttäjän junatyyppien wikipedia sivulle -->
+      <button type="button" class="wiki" onclick="openWiki()"> Train types (Wikipedia)</button>
       <br>
     </form>
+    <!-- Luodaan div-elementti, johon valitun aseman junatiedot tulostetaan -->
     <div id="trainData"></div>
-    <button type="button" class="collapsible">Open/Close the list of destination abbreviations</button> 
+    <!-- Luodaan vielä kolmas nappi ja annetaan tälle class, joka avaa tai sulkee div-elementin, joka sisältää listan kaikkien juna-asemien lyhenteistä. Tämän lisäksi annetaan napille vielä ID, johon viittaamalla nappi voidaan piilottaa-->
+    <button type="button" class="collapsible" id="infoButton">Open/Close the list of destination abbreviations</button> 
     <div class="content">
         <p>When searching through the list the usage of CTRL + F is <strong>HIGHLY</strong> recommended<br><br>
             Alv	=	Alavus <br>
@@ -280,6 +289,7 @@
             Äki	=	Äänekoski<br>
             Äs	=	Äetsä</p>
     </div>
+    <!-- Linkataan JavaScript tiedosto HTML tiedostoon -->
     <script src="main.js"></script>
   </body>
 </html>
